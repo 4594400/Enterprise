@@ -1,8 +1,9 @@
 package ua.gojava.module_01;
 
 
-import java.util.*;
-import java.util.concurrent.SynchronousQueue;
+import java.util.Collection;
+import java.util.List;
+import java.util.ListIterator;
 
 public class ComparingList extends CommonCollection{
 
@@ -68,31 +69,8 @@ public class ComparingList extends CommonCollection{
             iterator.remove();
             i++;
         }
-        //System.out.println("Size " + list.size());
         return (System.currentTimeMillis() - startTime)/count;
     }
-
-    public Map<String, Long> resultMap(List list, int size) {
-        Map<String, Long> result = new HashMap<>();
-        result.put("add", add(list, size));
-        result.put("get", get(list, size));
-        result.put("remove", remove(list, size));
-        result.put("contains", contains(list, size));
-        result.put("populate", populate(list, size));
-        result.put("listIteratorAdd", listIteratorAdd(list,size));
-        result.put("listIteratorRemove", listIteratorRemove(list,size));
-
-        Iterator iterator = result.keySet().iterator();
-
-        while (iterator.hasNext()) {
-            String key = iterator.next().toString();
-            String value = result.get(key).toString();
-
-            System.out.println(key + " " + value);
-        }
-        return result;
-    }
-
 
     public void printBodyList(List list, int size) {
         System.out.printf("%-10s%10d%10d%15d%15d%15d%23d%23d%n", list.getClass().getSimpleName(), add(list, size), get(list, size), remove(list, size),
