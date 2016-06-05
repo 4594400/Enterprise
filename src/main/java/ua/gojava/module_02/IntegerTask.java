@@ -11,7 +11,7 @@ public class IntegerTask implements Task<Integer>{
 
     @Override
     public void execute() {
-        result = value - 50;
+        result = value * 10;
     }
 
     @Override

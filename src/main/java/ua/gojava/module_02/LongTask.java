@@ -16,7 +16,7 @@ public class LongTask implements Task<Long> {
 
     @Override
     public void execute() {
-        result = value * 50;
+        result = value - 50;
 
     }
 
