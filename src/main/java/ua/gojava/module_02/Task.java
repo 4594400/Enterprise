@@ -7,4 +7,10 @@ public interface Task <T> {
 
     // Возвращает результат выполнения
     T getResult();
+
+    T getValue();
+
+    /*T getValidator();
+    T setValidator();*/
+
 }
