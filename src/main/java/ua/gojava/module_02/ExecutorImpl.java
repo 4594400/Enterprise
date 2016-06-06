@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ExecutorImpl<Number> implements Executor<Number> {
+public class ExecutorImpl implements Executor<Number> {
 
     List<Task> listTasks = new ArrayList<>();
     List<Number> validResult = new ArrayList<>();
@@ -23,10 +23,12 @@ public class ExecutorImpl<Number> implements Executor<Number> {
     }
 
     @Override
-    public void addTask(Task<? extends Number> task, Validator<? super Number> validator) {
+    public void addTask(Task<? extends Number> task, Validator<? extends Number> validator) {
+
         if (task.getResult() != null) {
             throw new RuntimeException();
         } else {
+
             task.setValidator(validator);  // <------------------------------------ ERROR
             listTasks.add(task);
         }
@@ -34,8 +36,10 @@ public class ExecutorImpl<Number> implements Executor<Number> {
 
     @Override
     public void execute() {
-        listTasks.forEach(Task::execute);
+
+        //listTasks.forEach(Task::execute);
         for (Task task : listTasks) {
+            task.execute();
             if (task.getValidator.isValid(task.getResult())) {  // <------------------------------------ ERROR
                 validResult.add(task.getResult());
             } else {

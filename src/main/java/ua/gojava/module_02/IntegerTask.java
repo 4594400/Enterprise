@@ -1,7 +1,7 @@
 package ua.gojava.module_02;
 
 
-public class IntegerTask<Integer> implements Task<Integer>{
+public class IntegerTask implements Task<Integer>{
     Integer value;
     Validator<Integer> validator = null;
     Integer result;
@@ -17,7 +17,7 @@ public class IntegerTask<Integer> implements Task<Integer>{
 
     @Override
     public void execute() {
-        result = value * 10;
+        result =  value * 10;
     }  // <----------------------------- ERROR
 
     @Override
@@ -30,11 +30,33 @@ public class IntegerTask<Integer> implements Task<Integer>{
         return value;
     }
 
-    public Validator<Integer> getValidator() {
-        return validator;
+    @Override
+    public Integer getValidator() {
+        return null;
     }
 
     public void setValidator(Validator<Integer> validator) {
         this.validator = validator;
     }
+
+    //    @Override
+//    public void setValidator(Validator<Integer> validator) {
+//        this.validator = validator;
+    }
+
+    /*@Override
+    public void setValidator(Validator<Integer> value) {
+        this.validator = value;
+    }
+*/
+
+
+
+   /* public Validator<Integer> getValidator() {
+        return validator;
+    }*/
+
+    /*public void setValidator(Validator<Integer> validator) {
+        this.validator = validator;
+    }*/
 }
