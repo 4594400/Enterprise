@@ -29,7 +29,7 @@ public class ExecutorImpl implements Executor<Number> {
             throw new RuntimeException();
         } else {
 
-            task.setValidator(validator);  // <------------------------------------ ERROR
+            task.setValidator (validator);  // <------------------------------------ ERROR
             listTasks.add(task);
         }
     }
