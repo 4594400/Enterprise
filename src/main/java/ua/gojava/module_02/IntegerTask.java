@@ -39,24 +39,5 @@ public class IntegerTask implements Task<Integer>{
         this.validator = validator;
     }
 
-    //    @Override
-//    public void setValidator(Validator<Integer> validator) {
-//        this.validator = validator;
-    }
 
-    /*@Override
-    public void setValidator(Validator<Integer> value) {
-        this.validator = value;
-    }
-*/
-
-
-
-   /* public Validator<Integer> getValidator() {
-        return validator;
-    }*/
-
-    /*public void setValidator(Validator<Integer> validator) {
-        this.validator = validator;
-    }*/
 }

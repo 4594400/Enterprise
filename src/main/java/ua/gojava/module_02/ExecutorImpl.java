@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ExecutorImpl implements Executor<Number> {
 
-    List<Task> listTasks = new ArrayList<>();
+    List<Task<? extends Number>> listTasks = new ArrayList<>();
     List<Number> validResult = new ArrayList<>();
     List<Number> inValidResult = new ArrayList<>();
     boolean check = false;
@@ -40,7 +40,7 @@ public class ExecutorImpl implements Executor<Number> {
         //listTasks.forEach(Task::execute);
         for (Task task : listTasks) {
             task.execute();
-            if (task.getValidator.isValid(task.getResult())) {  // <------------------------------------ ERROR
+            if (task.getValidator().isValid(task.getResult())) {  // <------------------------------------ ERROR
                 validResult.add(task.getResult());
             } else {
                 inValidResult.add(task.getResult());
