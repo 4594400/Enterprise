@@ -23,7 +23,7 @@ public class ExecutorImpl implements Executor<Number> {
     }
 
     @Override
-    public void addTask(Task<? extends Number> task, Validator<? super Number> validator) {
+    public void addTask(Task<? extends Number> task, Validator<Number> validator) {
 
         if (task.getResult() != null) {
             throw new RuntimeException();
@@ -38,12 +38,16 @@ public class ExecutorImpl implements Executor<Number> {
     public void execute() {
 
         //listTasks.forEach(Task::execute);
-        for (Task task : listTasks) {
+        for (Task<? extends Number> task : listTasks) {
             task.execute();
-            if (task.getValidator().isValid(task.getResult())) {
-                validResult.add((Number)task.getResult()); //<------------------------------------ CAST ?????
+            if (task.getValidator() == null) {
+                validResult.add(task.getResult());
             } else {
-                inValidResult.add((Number)task.getResult());  //<------------------------------------ CAST ?????
+                if (task.getValidator().isValid(task.getResult())) {
+                    validResult.add(task.getResult());
+                } else {
+                    inValidResult.add(task.getResult());
+                }
             }
         }
 

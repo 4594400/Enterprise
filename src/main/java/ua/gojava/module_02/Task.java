@@ -11,6 +11,6 @@ public interface Task <T> {
     T getValue();
 
     Validator getValidator();
-    void setValidator(Validator <? super T> validator);
+    void setValidator(Validator<Number> validator);
 
 }

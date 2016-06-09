@@ -3,14 +3,14 @@ package ua.gojava.module_02;
 
 public class IntegerTask implements Task<Integer>{
     Integer value;
-    Validator<Integer> validator = null;
+    Validator<Number> validator = null;
     Integer result;
 
     public IntegerTask(Integer value) {
         this.value = value;
     }
 
-    public IntegerTask(Integer value, Validator<Integer> validator) {
+    public IntegerTask(Integer value, Validator<Number> validator) {
         this.value = value;
         this.validator = validator;
     }
@@ -18,7 +18,7 @@ public class IntegerTask implements Task<Integer>{
     @Override
     public void execute() {
         result =  value * 10;
-    }  // <----------------------------- ERROR
+    }
 
     @Override
     public Integer getResult() {
@@ -31,12 +31,12 @@ public class IntegerTask implements Task<Integer>{
     }
 
     @Override
-    public Validator<Integer> getValidator() {
+    public Validator<Number> getValidator() {
         return validator;
     }
 
     @Override
-    public void setValidator(Validator<? super Integer> validator) {
+    public void setValidator(Validator<Number> validator) {
         this.validator = validator;
     }
 }
