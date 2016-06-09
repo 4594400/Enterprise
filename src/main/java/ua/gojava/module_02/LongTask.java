@@ -6,6 +6,7 @@ import java.util.List;
 
 public class LongTask implements Task<Long> {
     Long value;
+    Validator<Integer> validator = null;
     Long result;
 
     public LongTask(Long value) {
@@ -27,5 +28,16 @@ public class LongTask implements Task<Long> {
     @Override
     public Long getValue() {
         return value;
+    }
+
+    @Override
+    public Validator getValidator() {
+        return validator;
+    }
+
+    @Override
+    public void setValidator(Validator<? super Long> validator) {
+        this.validator = validator;
+
     }
 }
