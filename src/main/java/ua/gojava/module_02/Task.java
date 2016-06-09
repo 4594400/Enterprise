@@ -10,7 +10,7 @@ public interface Task <T> {
 
     T getValue();
 
-    T getValidator();
+    Validator getValidator();
     void setValidator(Validator <T> validator);
 
 }

@@ -31,10 +31,11 @@ public class IntegerTask implements Task<Integer>{
     }
 
     @Override
-    public Integer getValidator() {
-        return null;
+    public Validator<Integer> getValidator() {
+        return validator;
     }
 
+    @Override
     public void setValidator(Validator<Integer> validator) {
         this.validator = validator;
     }
