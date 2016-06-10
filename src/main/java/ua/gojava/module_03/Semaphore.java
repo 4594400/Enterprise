@@ -1,4 +1,4 @@
-package ua.gojava.module_3;
+package ua.gojava.module_03;
 
 
 public interface Semaphore {

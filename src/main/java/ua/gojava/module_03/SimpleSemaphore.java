@@ -1,4 +1,4 @@
-package ua.gojava.module_3;
+package ua.gojava.module_03;
 
 
 public class SimpleSemaphore implements Semaphore {
