@@ -12,6 +12,7 @@ public class Main {
 
         numberExecutor.addTask(new LongTask(-500L), new NumberValidator());
         numberExecutor.addTask(new IntegerTask(-5), new NumberValidator());
+        numberExecutor.addTask(new IntegerTask(7), new NumberValidator());
 
 
         numberExecutor.execute();
