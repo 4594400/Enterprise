@@ -14,7 +14,7 @@ public class PhaserExample implements SquareSum{
 
     public static void main(String[] args) throws Exception {
         //int [] array = new int[] {1,2,3,4,5,6,7,8,9,10};
-        System.out.println(new PhaserExample().getSquareSum(createArray(), THREAD_POOL_SIZE));
+        System.out.println("Sum = " + new PhaserExample().getSquareSum(createArray(), THREAD_POOL_SIZE));
     }
 
 
@@ -28,8 +28,8 @@ public class PhaserExample implements SquareSum{
         for (Future f : futures) {
             result += (int) f.get();
         }
-        executorService.shutdown();
         phaser.arriveAndDeregister();
+        executorService.shutdown();
         return result;
     }
 
@@ -46,7 +46,7 @@ public class PhaserExample implements SquareSum{
             tasks.add(new Callable<Integer>() {
                 @Override
                 public Integer call() throws Exception {
-
+                    System.out.println("Before calculating");
                     phaser.arriveAndAwaitAdvance();
                     int sum = 0;
                         int[] contentFromList = list.get(finalI);
