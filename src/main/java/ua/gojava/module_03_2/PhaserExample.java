@@ -46,6 +46,8 @@ public class PhaserExample implements SquareSum{
             tasks.add(new Callable<Integer>() {
                 @Override
                 public Integer call() throws Exception {
+
+                    phaser.arriveAndAwaitAdvance();
                     int sum = 0;
                         int[] contentFromList = list.get(finalI);
                         for (int k = 0; k < contentFromList.length; k++) {
