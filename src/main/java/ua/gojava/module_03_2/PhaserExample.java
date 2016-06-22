@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 public class PhaserExample implements SquareSum{
-    private static final int THREAD_POOL_SIZE = 5;
+    private static final int THREAD_POOL_SIZE = 4;
     Phaser phaser = new Phaser(THREAD_POOL_SIZE);
 
 
